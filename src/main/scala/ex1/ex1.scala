@@ -150,16 +150,25 @@ object ex1 {
     println()
     println("NBD 1.10")
     var list10 = List[Int]()
+    //czemu ta pętla nie działa??
     var iter10 = -10
     while(iter10 <= 20){
       val oddNumber = iter10 % 2
       if(oddNumber == 0)
-        iter10 :: list10
+        iter10 :: list10//tu
       else
-        iter10 * -1 :: list10
+        iter10 * -1 :: list10//i tu
       iter10 = iter10+1
+    }
+    1 :: list10//i tu
+
+    list10 = List(-7,3,-6,0,4,20,-50,100,2,2,-2,-2)
+
+    def listAbsMin5To12(list: List[Int]):List[Int]={
+      list filter (_ >= -5) filter(_ <= 12) map (_.abs)
     }
 
     println(list10)
+    println(listAbsMin5To12(list10))
   }
 }
